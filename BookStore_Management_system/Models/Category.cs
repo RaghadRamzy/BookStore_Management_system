@@ -1,10 +1,13 @@
-﻿namespace BookStore_Management_system.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BookStore_Management_system.Models
 {
     public class Category
     {
         public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
-        public string Description { get; set; }
-        public List<Book> Books { get; set; }
+        public string? Description { get; set; }
+        public ICollection<Book> Books { get; set; } = new List<Book>();
     }
 }
